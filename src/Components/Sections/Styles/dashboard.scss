@@ -1,0 +1,96 @@
+$black: #282c34;
+$gray: #cacaca;
+$white: #ffffff;
+$blue: rgb(3, 54, 255);
+$green: rgb(61, 255, 145);
+$dark: #2c3e50;
+
+.dashboard-wrapper {
+  color: $black;
+  hr {
+    width: 100%;
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .top-stats-wrapper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: $black;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .top-stats {
+      display: flex;
+      flex-direction: column;
+      min-width: 15rem;
+      width: 20%;
+      min-height: 5rem;
+      margin-left: 5px;
+      margin-right: 5px;
+      border: 1px solid $gray;
+      border-radius: 5px;
+      background-color: $white;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding: 1rem;
+
+      .stats {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+
+      }
+      svg {
+        width: 3rem;
+      }
+      #icon1 {
+        fill: rgb(139, 255, 51);
+      }
+      #icon2 {
+        fill: rgb(177, 255, 51);
+      }
+      #icon3 {
+        fill: rgb(245, 51, 255);
+      }
+      #icon4 {
+        fill: rgb(214, 51, 255);
+      }
+    }
+  }
+
+  .charts-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: calc(2rem + 4px);
+    padding-right: calc(2rem + 4px);
+    .charts {
+      min-width: 10rem;
+      width: 49%;
+      margin-bottom: 1rem;
+      border: 1px solid $gray;
+      border-radius: 5px;
+      background-color: $white;
+    }
+
+    @media screen {
+    }
+  }
+}

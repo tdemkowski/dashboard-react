@@ -1,0 +1,15 @@
+$black: #282c34;
+$gray: #cacaca;
+$white: #ffffff;
+$blue: rgb(3, 54, 255);
+$green: rgb(61, 255, 145);
+$dark: #2c3e50;
+
+.typography-window {
+  background-color: $white;
+  border: 1px solid $gray;
+  border-radius: 5px;
+  margin: 2rem;
+  padding: 2rem;
+  text-align: left;
+}
