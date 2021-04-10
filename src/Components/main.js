@@ -10,6 +10,7 @@ import Notifications from "./Sections/notifications";
 import TableList from "./Sections/tableList";
 import Typography from "./Sections/typography";
 import UserProfile from "./Sections/userProfile";
+import ReduxPlaying from './Sections/reduxPlaying';
 
 import icons from '../loadIcons'
 
@@ -36,6 +37,9 @@ const Main = props => {
             </Route>
             <Route path="/notifications">
               <Notifications />
+            </Route>
+            <Route path="/reduxPlaying">
+              <ReduxPlaying />
             </Route>
             <Route path="/">
               <Dashboard />

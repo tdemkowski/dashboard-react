@@ -20,13 +20,11 @@ const Navbar = props => {
   const expandedProps = useSpring({
     height: dropdownActive ? "205px" : "0px",
     opacity: dropdownActive ? 1 : 0,
-    config: { duration: 300 },
   });
   const arrowProps = useSpring({
     position: "relative",
     top: dropdownActive ? "0px" : "2px",
     transform: `rotate(${dropdownActive ? "0" : "90"}deg)`,
-    config: { duration: 300 }
   });
 
   const highlightStyle = { color: dropdownActive ? darkGreen : null };

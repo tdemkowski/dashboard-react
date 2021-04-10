@@ -1,0 +1,218 @@
+$black: #282c34;
+$gray: #cacaca;
+$white: #ffffff;
+$blue: rgb(3, 54, 255);
+$green: rgb(61, 255, 145);
+$dark: #2c3e50;
+$red: #b01030;
+
+$primary: #0336ff;
+$info: #1dc7ea;
+$success: #00ff7f;
+$warning: #ff9500;
+$danger: #dc143c;
+
+.notifications-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  // border-style: solid;
+  height: 95vh;
+  overflow: hidden;
+  .primary {
+    background-color: $primary;
+  }
+  .info {
+    background-color: $info;
+  }
+  .success {
+    background-color: $success;
+  }
+  .warning {
+    background-color: $warning;
+  }
+  .danger {
+    background-color: $danger;
+  }
+
+  .notifications-window {
+    width: 100%;
+    margin: 2rem;
+    padding: 2rem;
+    background-color: $white;
+    border: 1px solid $gray;
+    border-radius: 5px;
+  }
+
+  h2,
+  p {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+  }
+
+  .notifications {
+    position: relative;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    img {
+      filter: invert(100%);
+    }
+
+    .notification-item {
+      h2,
+      p {
+        color: $white;
+        font-size: 15px;
+      }
+      position: absolute;
+      cursor: pointer;
+      user-select: none;
+      padding: 8px;
+      margin-top: 8px;
+      width: 25rem;
+      min-height: 2rem;
+      text-align: center;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .close-button:hover {
+        background-color: #00000042;
+      }
+
+      .notification-item-inner {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    .notifications-left {
+      // border-style: solid;
+      min-width: 30rem;
+      min-height: 20rem;
+    }
+
+    .notifications-right {
+      // border-style: solid;
+      min-width: 31rem;
+    }
+  }
+
+  .notification-stream {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+
+    .stream-button {
+      user-select: none;
+      cursor: pointer;
+      background-color: #60686c;
+      width: 20rem;
+      height: 3rem;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        color: $white;
+        margin-bottom: 1px;
+        font-size: 14px;
+        transition-duration: 0.15s;
+      }
+    }
+
+    .stream-button:hover {
+      p {
+        color: $green;
+      }
+    }
+  }
+
+  .notification-stream-wrapper {
+    position: absolute;
+    right: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .stream {
+    user-select: none;
+    position: relative;
+    background-color: #868686;
+    width: 25rem;
+    height: 3rem;
+    border-radius: 3px 3px 0 0;
+    bottom: 0rem;
+    // padding: 2px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    p {
+      color: $white;
+      font-size: 14px;
+      margin-left: 0.5rem;
+    }
+
+    .stream-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 5px;
+    }
+
+    .stream-time {
+      height: 5px;
+      // border-radius: 3px;
+      background-color: #60b6e7;
+    }
+
+    .close-button {
+      min-width: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background-color: #00000010;
+      img {
+        width: 0.6rem;
+        filter: invert(100%);
+      }
+    }
+
+    .close-button:hover {
+      background-color: #0000002c;
+    }
+
+    // @media (prefers-color-scheme: dark) {
+    //   .stream-time {
+    //     filter: invert(100%);
+    //   }
+    // }
+    // @media (prefers-color-scheme: light) {
+    //   .stream-time {
+    //     filter: none;
+    //   }
+    // }
+  }
+}
+
+.close-button {
+  cursor: pointer;
+  min-width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  background-color: #0000001e;
+  transition-duration: 0.1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 0.8rem;
+  }
+}

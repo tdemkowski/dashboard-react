@@ -47,19 +47,19 @@ a {
 }
 
 .primary {
-  color: blue;
+  color: rgb(3, 54, 255);
 }
 .info {
-  color: teal;
+  color: rgb(29, 199, 234);
 }
 .success {
-  color: green;
+  color: springgreen;
 }
 .warning {
-  color: orange;
+  color: rgb(255, 149, 0);
 }
 .danger {
-  color: rgb(214, 0, 0);
+  color: crimson;
 }
 
 hr {
@@ -92,7 +92,7 @@ body {
 }
 
 .App-logo {
-  height: 2rem;
+  height: 2.3rem;
   pointer-events: none;
 }
 
@@ -157,8 +157,20 @@ body {
     }
 
     .searchbar-icon {
+      cursor: pointer;
       height: 1.5rem;
     }
+
+    // @media (prefers-color-scheme: dark) {
+    //   .searchbar-icon {
+    //     filter: invert(50%);
+    //   }
+    // }
+    // @media (prefers-color-scheme: light) {
+    //   .searchbar-icon {
+    //     filter: none;
+    //   }
+    // }
   }
 
   .navbar-right {
@@ -258,6 +270,7 @@ body {
   }
 
   .theme-expanded {
+    user-select: none;
     cursor: default;
     position: fixed;
     top: 10rem;
@@ -269,20 +282,29 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
     transition-duration: 0.1s;
-    box-shadow: 0 0 5px 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
 
     .image-preview {
       width: 4rem;
       height: 5rem;
       margin: 3px;
+      border-radius: 5px;
     }
 
     .theme-expanded-images {
-      cursor: pointer;
       min-height: 8rem;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
+      // padding-left: 5rem;
+      // padding-right: 5rem;
+      img {
+        cursor: pointer;
+        width: 4rem;
+        height: 5rem;
+        border: 3px solid rgba(255, 0, 0, 0);
+      }
     }
 
     .theme-expanded-filters {
@@ -294,18 +316,26 @@ body {
     }
 
     .theme-color {
+      border: 3px solid rgba(255, 0, 0, 0);
       cursor: pointer;
       margin: 1rem;
     }
 
     .active {
-      border: 3px solid $black;
+      border: 3px solid $black !important;
       transition-duration: 0.15s;
+    }
+
+    h3 {
+      margin-top: 1rem;
+      font-weight: 500;
+      font-size: 17px;
     }
   }
 }
 
 .sidebar {
+  user-select: none;
   color: teal;
   width: $sidebarWidth;
   padding-left: 1rem;
@@ -385,8 +415,9 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin-right: 1rem;
+  margin-left: 0.5rem;
 }
 
 .green {

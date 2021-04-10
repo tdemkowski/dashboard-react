@@ -9,7 +9,10 @@ $green: rgb(61, 255, 145);
     border: 1px solid $gray;
     border-radius: 5px;
     margin: 2rem;
+    padding-top: 2rem;
     p {
+      text-align: start;
+      margin-left: 4rem;
       color: $black;
       font-size: 18px;
     }
@@ -28,6 +31,12 @@ $green: rgb(61, 255, 145);
     justify-content: center;
     padding: 2rem;
     align-content: space-around;
+    p {
+      margin-top: 5px;
+      color: $black;
+      font-size: 16px;
+      margin-left: 0;
+    }
 
     .icon-display {
       width: 8rem;
@@ -46,6 +55,17 @@ $green: rgb(61, 255, 145);
         width: 2rem;
         height: auto;
       }
+
+      // @media (prefers-color-scheme: dark) {
+      //   .icon {
+      //     filter: invert(100%);
+      //   }
+      // }
+      // @media (prefers-color-scheme: light) {
+      //   .icon {
+      //     filter: invert(0%);
+      //   }
+      // }
     }
   }
 }

@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
+import LazyLoad from "react-lazyload";
 import image1 from "../Images/image1.jpg";
 import image2 from "../Images/image2.png";
 import image3 from "../Images/image3.jpg";
 import image4 from "../Images/image4.jpg";
+import image5 from "../Images/image5.jpg";
+import image6 from "../Images/image6.jpg";
+import image7 from "../Images/image7.jpg";
+// import image8 from '../Images/image8.jpg'
 
 import icon from "../Images/Icons/settings-5.svg";
 
-const images = [image1, image2, image3, image4];
+const images = [image1, image2, image3, image4, image5, image6, image7];
 const colors = [
-  "#0000009d",
-  "#807e009b",
-  "#ff25259b",
-  "#0000ff9b",
-  "#0080009b",
+  "#000000b3",
+  "#009b2466",
   "#0080809b",
+  "#00469b66",
+  "#c8000066",
+  "#96009666",
 ];
 
 const Theme = props => {
@@ -28,64 +33,72 @@ const Theme = props => {
     config: { duration: 50 },
   });
 
-  const windowProps = useSpring({
-    top: toggleExpand ? "10rem" : "15rem",
+  const opacityProps = useSpring({
     opacity: toggleExpand ? "1" : "0",
     config: { duration: 200 },
   });
 
+  const windowProps = useSpring({
+    top: toggleExpand ? "10rem" : "15rem",
+    // config: { mass: 1, tension: 400, friction: 20 }
+    config: { duration: 200 },
+  });
+
   const expansionHandler = () => {
-    setTE(!toggleExpand)
+    setTE(!toggleExpand);
     if (expand) {
-      setHover(false)
+      setHover(false);
       setTimeout(() => {
         setExpand(false);
       }, 500);
     } else {
-      setExpand(true)
+      setExpand(true);
     }
   };
 
   const expanded = () => {
     return (
-      <animated.div
-        className="theme-expanded"
-        style={windowProps}
-      >
-        <h3>Filters</h3>
-        <div className="theme-expanded-filters">
-          {colors.map(color => (
-            <div
-              className={
-                "theme-color " + (color === props.color ? "active" : null)
-              }
-              key={color}
-              style={{
-                background: color,
-                width: "1.5rem",
-                height: "1.5rem",
-                borderRadius: "1rem",
-              }}
-              onClick={() => props.setColor(color)}
-            ></div>
-          ))}
-        </div>
-        <hr />
-        <h3>Images</h3>
-        <div className="theme-expanded-images">
-          {images.map(image => (
-            <img
-              key={image.toString()}
-              src={image}
-              alt=""
-              className={
-                "image-preview " + (image === props.image ? "active" : null)
-              }
-              onClick={() => props.setImage(image)}
-            ></img>
-          ))}
-        </div>
-      </animated.div>
+      <LazyLoad>
+        <animated.div
+          className="theme-expanded"
+          style={{ ...windowProps, ...opacityProps }}
+        >
+          <h3>Filters</h3>
+          <div className="theme-expanded-filters">
+            {colors.map(color => (
+              <div
+                className={
+                  "theme-color " + (color === props.color ? "active" : null)
+                }
+                key={color}
+                style={{
+                  background: color,
+                  width: "1.5rem",
+                  height: "1.5rem",
+                  borderRadius: "1rem",
+                }}
+                onClick={() => props.setColor(color)}
+              ></div>
+            ))}
+          </div>
+          <hr />
+          <h3>Images</h3>
+          <div className="theme-expanded-images">
+            {images.map(image => (
+              <LazyLoad key={image.toString()} height={"2rem"} width={"4rem"}>
+                <img
+                  src={image}
+                  alt=""
+                  className={
+                    "image-preview " + (image === props.image ? "active" : null)
+                  }
+                  onClick={() => props.setImage(image)}
+                ></img>
+              </LazyLoad>
+            ))}
+          </div>
+        </animated.div>
+      </LazyLoad>
     );
   };
 
@@ -98,11 +111,7 @@ const Theme = props => {
       }}
       onMouseLeave={() => setHover(false)}
     >
-      <img
-        src={icon}
-        className="icon"
-        onClick={() => expansionHandler()}
-      ></img>
+      <img src={icon} className="icon" onClick={() => expansionHandler()}></img>
       {expand ? expanded() : null}
     </animated.div>
   );

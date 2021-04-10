@@ -1,19 +1,140 @@
+$black: #282c34;
+$gray: #cacaca;
+$white: #ffffff;
+$blue: rgb(3, 54, 255);
+$green: rgb(61, 255, 145);
+$dark: #2c3e50;
+$red: #b01030;
+
+$iconSize: 1.9rem;
+
 table {
-  font-family: arial, sans-serif;
+  // font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  td,
+  th {
+    border-bottom: 1px solid #dddddd;
+    padding: 8px;
+    color: black;
+  }
 }
 
-td,
-th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-  color: black;
+.plain, .striped, .zebra {
+  padding: 2rem;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+.striped, .zebra {
+  td,
+  th {
+    // border: 1px solid #dddddd;
+    padding: 8px;
+    color: black;
+  }
 
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+}
+
+.zebra {
+  border: 1px solid $gray;
+  background-color: $white;
+}
+
+.table-row:hover {
+  background-color: $gray !important;
+  border: 1px solid $red;
+}
+
+.table-wrapper {
+  width: 80%;
+  margin-bottom: 4rem;
+}
+
+.tablelist-wrapper {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .zebra {
+    thead,
+    tfoot {
+      // background: url(leopardskin.jpg);
+      color: white;
+      text-shadow: 1px 1px 1px black;
+    }
+
+    thead th,
+    tfoot th,
+    tfoot td {
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.5)
+      );
+      border: 3px solid purple;
+    }
+  }
+}
+
+.table-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  .table-top-text {
+    h2,
+    p {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .search-table {
+    display: flex;
+    align-items: center;
+    height: 1.8rem;
+    width: 30%;
+    align-self: flex-end;
+    input {
+      height: 100%;
+      width: 100%;
+      outline: none;
+      border-top: 1px solid $gray;
+      border-bottom: 1px solid $gray;
+      border-left: 1px solid $gray;
+      border-right: none;
+    }
+
+    input,
+    input::-webkit-input-placeholder {
+      font-size: 20px;
+      line-height: 3;
+    }
+
+    .search-icon-wrapper {
+      height: 1.9rem;
+      width: 2.1rem;
+      border-top: 1px solid $gray;
+      border-bottom: 1px solid $gray;
+      border-right: 1px solid $gray;
+      background-color: $red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .search-icon {
+        width: 60%;
+        filter: invert(100%);
+      }
+    }
+  }
 }

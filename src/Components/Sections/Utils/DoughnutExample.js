@@ -26,7 +26,7 @@ const DoughnutExample = () => {
 //   displayName: 'DoughnutExample',
     return (
       <div>
-        <h2>Routine</h2>
+        {/* <h2>Routine</h2> */}
         <Doughnut data={data} />
       </div>
     );

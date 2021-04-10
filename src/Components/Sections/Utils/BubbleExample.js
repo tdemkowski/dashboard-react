@@ -70,7 +70,7 @@ const data = {
 const BubbleExample = () => {
   return (
     <div>
-      <h2>Bubble Example</h2>
+      {/* <h2>Bubble Example</h2> */}
       <Bubble data={data} />
     </div>
   );

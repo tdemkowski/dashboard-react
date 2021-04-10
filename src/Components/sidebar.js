@@ -53,7 +53,7 @@ const Sidebar = props => {
         <img src={props.logo} className="App-logo" alt="logo" />
         <p>React Template</p>
       </div>
-      <hr style={{marginTop: '1.2rem'}}/>
+      <hr style={{marginTop: '1.2rem', opacity: 0.5}}/>
       {sections.map(name => {
         return (
         <Link

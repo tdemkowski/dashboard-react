@@ -116,8 +116,11 @@ $red: #d30035;
       }
 
       button {
-        margin-top: 1rem;
-        margin-left: 0.4rem;
+        position: relative;
+        // margin-top: 1rem;
+        // margin-left: 0.4rem;
+        top: 5px;
+        left: 5px;
         width: 10rem;
         height: 3.5rem;
         background-color: $red;
