@@ -4,10 +4,14 @@ export const increment = () => {
   };
 };
 
-export const changeText = value => {
+export const changeText = (value) => {
   return {
     type: "changeText",
     payload: value,
-    hobos: value.toUpperCase(),
+    upperCaseMe: value.toUpperCase(),
   };
+};
+
+export const sagaTime = () => {
+  return { type: "saga_when", payload: "SAGA_when?" };
 };
